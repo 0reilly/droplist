@@ -120,11 +120,7 @@ const Demo = () => {
       <div className={classes.demoWrapper}>
         <div style={{ height: '64px' }} />
         <div className={classes.todoListWrapper}>
-          <div className={classes.userLabel}>
-            {authState.currentUser?.email &&
-              `Hi, ${authState.currentUser?.email}`}
-          </div>
-          <div className={classes.title}>Your Todo List</div>
+          <div className={classes.title}>Hash Drops</div>
           <div className={classes.formWrapper}>
             <form className={classes.form} onSubmit={onAddTodoHandler}>
               <TextField
@@ -142,8 +138,8 @@ const Demo = () => {
             data={todoState.todos}
             stickyHeader={true}
             placeHolder="Nothing to do"
-            headerStyle={{ background: 'black' }}
-            rowStyle={{ color: 'black', fontSize: '1.5rem' }}
+            headerStyle={{ background: '#d2c7a5' }}
+            rowStyle={{ color: '#d2c7a5', fontSize: '1.5rem' }}
             onDeleteTodo={(e, todoId) => onDeleteTodoHandler(e)(todoId)}
             onCompleteTodo={(e, checked, todoId) =>
               onCompleteTodoHandler(e)(checked)(todoId)

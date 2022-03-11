@@ -18,8 +18,8 @@ const TableHeader: FC<{
               fontSize: '1.5rem',
               fontWeight: 600,
               height: '48px',
-              background: 'black',
-              color: 'white',
+              background: '#d2c7a5',
+              color: '#cfa73f',
               ...headerStyle
             }}
           >

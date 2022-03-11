@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     position: 'fixed',
     top: 0,
     left: 0,
-    background: 'white',
+    background: '#d2c7a5',
     boxShadow: '0 0 8px 3px rgba(0,0,0,0.2)',
     zIndex: 999,
     padding: '0 16px',
@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
   authLinks: {
     '& > a': {
       textDecoration: 'none',
-      color: 'black'
+      color: '#cfa73f'
     }
   }
 }));
@@ -50,9 +50,10 @@ const Navbar = () => {
               <Button
                 style={{
                   textDecoration: 'none',
-                  border: '2px black solid',
+                  border: '2px #cfa73f solid',
                   height: '48px',
-                  width: '80px'
+                  width: '80px',
+                  color: '#cfa73f'
                 }}
               >
                 Home
@@ -63,8 +64,8 @@ const Navbar = () => {
             <Link to="/demo">
               <Button
                 style={{
-                  background: 'black',
-                  color: 'white',
+                  background: '#cfa73f',
+                  color: '#d2c7a5',
                   textDecoration: 'none',
                   height: '48px',
                   width: '80px'

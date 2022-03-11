@@ -8,8 +8,8 @@ const AddButton: FC<{
     <Button
       type="submit"
       style={{
-        background: '#FF0083',
-        color: 'white',
+        background: '#cfa73f',
+        color: '#d6cca9',
         padding: '1rem',
         fontSize: '1rem',
         fontWeight: 500,
