@@ -71,7 +71,7 @@ const Navbar = () => {
                   width: '80px'
                 }}
               >
-                Demo
+                Jobs
               </Button>
             </Link>
           </Grid>
