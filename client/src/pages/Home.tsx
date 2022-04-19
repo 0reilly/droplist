@@ -86,11 +86,10 @@ const Post = () => {
 
     return (
       <>
-          <div className={classes.demoWrapper}>
+          <div>
               <Navbar />
               <div style={{ height: '64px' }} />
-              <div className={classes.todoListWrapper}>
-                  <div className={classes.title}>goodwlb</div>
+              <div>
                   <TodosTable
                     isLoading={todoState.isLoading}
                     header={header}

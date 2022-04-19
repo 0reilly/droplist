@@ -13,7 +13,7 @@ import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 import CheckoutForm from './CheckoutForm';
 import MDEditor from '@uiw/react-md-editor';
-
+import { Card } from 'react-bootstrap';
 
 const Post = () => {
   const dispatch = useDispatch();
@@ -28,7 +28,6 @@ const Post = () => {
       primary_tag: primaryTag,
       description,
       link,
-      highlight,
       color
     }));
   };
@@ -45,13 +44,9 @@ const Post = () => {
   const [ description, setDescription ] = useState('');
   const [ billing, setBilling ] = useState('');
   const [ link, setLink ] = useState('');
-  const [ message, setMessage ] = useState('');
   const [ color, setColor ] = useState('#ffffff');
   const [ price, setPrice ] = useState(4900);
-  const [ highlight, setHighlight ] = useState(false);
-  const [ addBrand, setAddBrand ] = useState(false);
 
-  console.log()
   const handleAddon = (e: React.ChangeEvent<HTMLInputElement>, value: string) => {
     if (value === 'none') {
       setPrice(4900);
@@ -62,12 +57,11 @@ const Post = () => {
   };
 
   return (
-    <>
-      <div>
-        <HomeNav />
-      </div>
-      <div className='ml-4 mr-4 mt-4  d-flex flex-row justify-content-center'>
-          <div className={'card'}>
+    <div className="post">
+      <HomeNav />
+      <div className='col ml-4 mr-4 mt-4  d-flex flex-row justify-content-center'>
+        <form action="">
+          <Card >
             <div className='card-header'>
               <h4 className='text-center'>Let's Start</h4>
             </div>
@@ -88,18 +82,18 @@ const Post = () => {
                   onChange={ (e) => setPrimaryTag(e.target.value) }
                   className='custom-select my-1 mr-sm-2'
                 >
-                  <option>Select a social media platform</option>
-                  <option value='TikTok'>TikTok</option>
-                  <option value='Instagram'>Instagram</option>
-                  <option value='YouTube'>YouTube</option>
-                  <option value='Twitter'>Twitter</option>
-                  <option value='Facebook'>Facebook</option>
-                  <option value='Snapchat'>Snapchat</option>
+                  <option>Select a Role</option>
+                  <option value='Software Engineer'>Software Engineer</option>
+                  <option value='Product Manager'>Product Manager</option>
+                  <option value='Designer'>Designer</option>
+                  <option value='Content Writer'>Content Writer</option>
+                  <option value='QA'>QA</option>
+                  <option value='Customer Support'>Customer Support</option>
                 </select>
               </div>
               <div className='pt-2 pb-2'>
                 <span>DESCRIPTION</span>
-                <div className='container'>
+                <div className='container' data-color-mode="light">
                   <MDEditor
                     value={ description }
                     onChange={ (value) => {if(value){setDescription(value)} } }
@@ -119,7 +113,7 @@ const Post = () => {
                 />
               </div>
               <div className='pt-2 pb-2'>
-                <span>PAY</span>
+                <span>Salary</span>
                 <input
                   value={ pay }
                   onChange={ (e) => setPay(e.target.value) }
@@ -128,10 +122,10 @@ const Post = () => {
                 />
               </div>
             </div>
-          </div>
-          <div className='card mt-5'>
+          </Card>
+          <Card className='mt-5'>
             <div className='card-header'>
-              <h4 className='text-center'>Design Your Sponsership Offer</h4>
+              <h4 className='text-center'>Design Your Job Posting</h4>
             </div>
             <div className='card-body'>
               <p><input
@@ -153,8 +147,8 @@ const Post = () => {
                 className='pl-2'
               >Highlight your post in Yellow (+$20) (2X MORE VIEWS)</label></p>
             </div>
-          </div>
-          <div className='card mt-5 mb-5'>
+          </Card>
+          <Card className=' mt-5 mb-5'>
             <div className='card-header'>
               <h4 className='text-center'>Finalize Listing</h4>
             </div>
@@ -182,9 +176,10 @@ const Post = () => {
                 </Elements>
               </div>
             </div>
-          </div>
+          </Card>
+        </form>
       </div>
-    </>
+    </div>
   );
 };
 

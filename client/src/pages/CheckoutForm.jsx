@@ -18,7 +18,6 @@ const CheckoutForm = (props) => {
     let history = useHistory();
 
     useEffect(() => {
-        console.log(succeeded)
         window.scrollTo(0, 0);
     }, []);
 
@@ -116,8 +115,8 @@ const CheckoutForm = (props) => {
                     {error}
                 </div>
             )}
-            {/* Show a success message upon completion */}
-            <div className={succeeded ? "p-4 justify-content-center result-message" : "p-4 justify-content-center result-message hidden"}>
+            { succeeded ?
+              <div className={"p-4 justify-content-center result-message"}>
                 <div className="row">
                     <button className="btn btn-primary" onClick={goHome}>
                         Home.
@@ -129,6 +128,8 @@ const CheckoutForm = (props) => {
                     </p>
                 </div>
             </div>
+            : null }
+
 
         </form>
     );
