@@ -1,5 +1,4 @@
 import { IsString, IsBoolean } from 'class-validator';
-import { UserSO } from 'src/user/user.dto';
 
 export class TodoDTO {
   @IsString()
@@ -12,7 +11,12 @@ export class TodoDTO {
 export type TodoSO = {
   id: string;
   createdOn: Date;
-  completed: boolean;
-  author: UserSO;
-  token?: string;
+  name: string;
+  pay: number;
+  description: string;
+  link: string;
+  primary_tag: string;
+  color: string;
+  position: string;
+  billing: string;
 };

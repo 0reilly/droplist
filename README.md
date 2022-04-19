@@ -69,9 +69,9 @@ project-name
     README.md
 ```
 
-## Demo
+## Post
 
-Demo is a simple Todolist using React and Material-UI on client side, nest on backend and postgres as our database
+Post is a simple Todolist using React and Material-UI on client side, nest on backend and postgres as our database
 demo can be started in development mode and in production mode as well.
 
 <img src="./demo1.png" style="box-shadow 0px 10px 10px rgba(0,0,0,0.3);" />
@@ -97,7 +97,7 @@ cd project-name/server && npm i
 cd ../client && npm i
 ```
 
-Now Let's check our Demo, for that run the following command
+Now Let's check our Post, for that run the following command
 
 ```bash
 cd ../ && sudo docker-compose --file docker-compose-dev.yml up

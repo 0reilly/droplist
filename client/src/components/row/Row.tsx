@@ -23,18 +23,9 @@ const useStyles = makeStyles(() => ({
 const Row: FC<{
   data: Todo;
   rowStyle?: RowStyle;
-  onCompleteTodo: (
-    event: React.ChangeEvent<HTMLInputElement>,
-    checked: boolean,
-    id: string
-  ) => void;
-  onDeleteTodo: (
-    e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
-    id: string
-  ) => void;
-}> = ({ data, rowStyle = {}, onDeleteTodo, onCompleteTodo }) => {
-  const { completed, content, createdOn } = data;
-  const classes = useStyles({ completed });
+}> = ({ data, rowStyle = {} }) => {
+  const { content, createdOn } = data;
+  const classes = useStyles(false);
 
   return (
     <TableRow
@@ -45,18 +36,8 @@ const Row: FC<{
     >
       <TableCell className={classes.contentTableCell}>
         <div className={classes.content}>{content}</div>
-        <div className={classes.deleteButtonWrapper}>
-          <DeleteButton onClick={(e) => onDeleteTodo(e, data.id)} />
-        </div>
       </TableCell>
       <TableCell>{new Date(createdOn).toLocaleString('eu')}</TableCell>
-      <TableCell style={{ textAlign: 'center' }}>
-        <Checkbox
-          checked={completed}
-          onChange={(e, checked) => onCompleteTodo(e, checked, data.id)}
-          id="completed"
-        />
-      </TableCell>
     </TableRow>
   );
 };

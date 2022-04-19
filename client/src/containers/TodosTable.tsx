@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
-import { Paper, Table, TableContainer, TableBody } from '@material-ui/core';
+import {
+  Paper,
+  TableContainer,
+} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-
+import { useHistory } from 'react-router-dom';
 import { ITodoTable } from '../types';
-import TableHeader from '../components/header/Header';
-import RowPlaceHolder from '../components/row/RowPlaceHolder';
-import Row from '../components/row/Row';
 
 const useStyles = makeStyles({
   root: {
@@ -33,49 +33,52 @@ const TodosTable: FC<ITodoTable> = ({
   rowStyle,
   placeHolder,
   isLoading,
-  onDeleteTodo,
-  onCompleteTodo,
   stickyHeader = true
 }) => {
   const classes = useStyles();
+  let history = useHistory();
+
+  const handleApplyRedirect = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>, id: string, link: string) => {
+    e.stopPropagation();
+    window.location.assign(link);
+  };
+
+  const handleJobSelect = (id: string) => {
+    history.push(`/jobs/${ id }`);
+  };
+
 
   return (
-    <TableContainer className={classes.root} component={Paper} elevation={6}>
-      <Table
-        stickyHeader={stickyHeader}
-        style={{ maxHeight: '100%' }}
-        aria-label="sticky table"
-      >
-        <TableHeader data={header} headerStyle={headerStyle} />
-        <TableBody>
-          {data.length ? (
-            data.map((todo) => {
-              return (
-                <Row
-                  data={todo}
-                  rowStyle={rowStyle}
-                  onDeleteTodo={(e, id) => onDeleteTodo(e, id)}
-                  onCompleteTodo={(e, checked, id) =>
-                    onCompleteTodo(e, checked, id)
-                  }
-                />
-              );
-            })
-          ) : (
-            <RowPlaceHolder
-              placeHolder={
-                isLoading
-                  ? 'Loading...'
-                  : placeHolder || 'Put your place holder here'
-              }
-              colSpan={header.length}
-              rowStyle={rowStyle}
-            />
-          )}
-        </TableBody>
-      </Table>
-    </TableContainer>
-  );
+    <div className="list-group mt-3 ">
+      <h5 className="ml-2">Today's Jobs with Work Life Balance</h5>
+      <p className="ml-2">(click each row to view details about the job)</p>
+      <table className='table table-condensed'>
+        <tbody>
+        { data && data.sort((a, b) => a.id < b.id ? 1 : -1).map(job => {
+          return (
+            <tr
+              //className={ job.color === '#fff9c9' ? 'highlight' : 'none' }
+              onClick={ () => handleJobSelect(job.id) }
+              key={ job.id }
+            >
+              <td>{ job.name }</td>
+              <td>{ job.primary_tag }</td>
+              <td>{ job.pay }</td>
+              <td>
+                <button
+                  onClick={ (e) => handleApplyRedirect(e, job.id, job.link) }
+                  className='btn btn-primary btn-sm'
+                >Apply
+                </button>
+              </td>
+            </tr>
+          );
+        }) }
+        </tbody>
+      </table>
+    </div>
+  )
+    ;
 };
 
 export default TodosTable;

@@ -13,10 +13,6 @@ export const todoReducer = (
   action: Action
 ): ITodoState => {
   switch (action.type) {
-    case types.COMPLETE_TODO:
-      return {
-        ...state
-      };
     case types.ADD_TODO:
       return {
         ...state
@@ -57,19 +53,6 @@ export const todoReducer = (
         isLoading: false,
         err: null
       };
-    case types.COMPLETE_TODO_SUCCESS: {
-      const todos = state.todos.map((todo) => {
-        if (todo.id === action.payload.id)
-          todo.completed = action.payload.checked;
-        return todo;
-      });
-      return {
-        ...state,
-        todos,
-        isLoading: false,
-        err: null
-      };
-    }
     case types.CLEAR_TODOS:
       return {
         todos: [],
