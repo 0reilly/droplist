@@ -1,14 +1,10 @@
 
-9
-	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 V
 &server/src/shared/http-error.filter.ts,c/4/c464e6e63c26fcaa56b842d91334abbf775b5d62
 T
 $server/src/shared/validation.pipe.ts,f/7/f75f1b16cf79d41ad724d42e2ad88ff5f399fe8d
 N
 server/src/todo/todo.module.ts,1/3/13f243814f4c994caf762ecebef2795c64d21fb9
-C
-server/package.json,5/4/54e8f14248f674b305c14bde70fadbe1da1edb31
 H
 server/src/app.module.ts,4/8/488956f2a22065a8ba9a70296fcab25792616980
 I
@@ -31,8 +27,6 @@ V
 .client/src/components/add-button/AddButton.tsx,8/4/84f7b9201e3ea76e77c2131eedec8b7486f17d38
 F
 docker-compose-dev.yml,9/5/95efa7ac30ddb82bc5239d379f0ab4909642ca0a
-B
-docker-compose.yml,3/5/35b8c13cf2eb2a194eada000eb310d65aed53b2a
 A
 server/Dockerfile,7/6/7616e2c202d821cf272f76f16fc84f194a512f67
 K
@@ -58,4 +52,24 @@ X
 H
 client/src/pages/App.css,f/5/f5e0b86036873aca32cc08ccb21838215ad991c4
 A
-package-lock.json,f/a/fa288d1472d29beccb489a676f68739ad365fc47
+client/Dockerfile,8/6/86b9845f28676d6ef06f2f252b8fb6ee4d73815a
+E
+client/Dockerfile.dev,d/c/dc25deb3580f1a0bc395c37d327e87a76ff71c04
+A
+client/nginx.conf,6/1/615c6e8b03c3c9d3765691ae7d506aa6c34ce257
+D
+client/src/index.tsx,d/8/d8be6e586ce48953e60ad445831c6115f717b813
+B
+client/src/App.css,2/a/2a082b18bfc3afa6b25d6c4584e995e6b6c4ee3e
+B
+client/src/App.tsx,3/c/3cf49e9c1307303f166fca4bc5f7dd102d07ff9a
+Q
+!client/src/containers/HomeNav.tsx,7/d/7d188066cf383432d5fdb2c3fa4dd0d6a87831e5
+I
+client/src/pages/Home.tsx,6/f/6ff131005a5e0e312f84a22d02f3a9a95bb07b53
+L
+server/src/app.controller.ts,7/7/779ba190ae66f637b2638a6fcecc6bb7cdd03b54
+R
+"server/src/todo/todo.controller.ts,d/4/d4329844e11015bedce197b6bea1cb1fd1b2c563
+P
+ client/src/containers/Navbar.tsx,e/d/edb51319024d791c89321a6954e9d9ca523dedbf

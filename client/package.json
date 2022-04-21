@@ -32,7 +32,8 @@
     "redux-devtools-extension": "^2.13.8",
     "redux-thunk": "^2.3.0",
     "typescript": "^3.7.5",
-    "stripe": "^8.129.0"
+    "stripe": "^8.129.0",
+    "jest": "24.9.0"
   },
   "proxy": "http://server:5500",
   "scripts": {
